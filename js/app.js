@@ -169,7 +169,7 @@ function filtrarMarca(auto){
     if(datosBusqueda.marca){
         return auto.marca === datosBusqueda.marca;
     }
-    return auto;
+    return true;
 }
 
 function filtrarYear(auto){
@@ -177,14 +177,14 @@ function filtrarYear(auto){
     if(datosBusqueda.year){
         return auto.year === parseInt(datosBusqueda.year);
     }
-    return auto;
+    return true;
 }
 
 function filtrarMinimo(auto){
     if(datosBusqueda.minimo){
         return auto.precio >= parseInt(datosBusqueda.minimo);
     }
-    return auto;
+    return true;
 }
 
 
@@ -193,7 +193,7 @@ function filtrarMaximo(auto){
     if(datosBusqueda.maximo){
         return auto.precio <= parseInt(datosBusqueda.maximo);
     }
-    return auto;
+    return true;
 }
 
 
@@ -201,21 +201,21 @@ function filtrarPuertas(auto){
     if(datosBusqueda.puertas){
         return auto.puertas === parseInt(datosBusqueda.puertas);
     }
-    return auto;
+    return true;
 }
 
 function filtrarTransmision(auto){
     if(datosBusqueda.transmision){
         return auto.transmision === datosBusqueda.transmision;
     }
-    return auto;
+    return true;
 }
 
 function filtrarColor(auto){
     if(datosBusqueda.color){
         return auto.color === datosBusqueda.color;
     }
-    return auto;
+    return true;
 }
 
 
@@ -223,12 +223,19 @@ btnReset.addEventListener("click", function(){
     limpiarHTML();
     //Para limpiar los filtros
     selectMarca.value = "";
+    datosBusqueda.marca ="";
     selectYear.value = "";
+    datosBusqueda.year ="";
     selectMin.value = "";
+    datosBusqueda.minimo ="";
     selectMax.value = "";
+    datosBusqueda.maximo ="";
     selectPuertas.value = "";
+    datosBusqueda.puertas ="";
     selectTransmision.value = "";
+    datosBusqueda.transmision ="";
     selectColor.value = "";
+    datosBusqueda.color ="";
     
     mostrarAutos(autos)
     
